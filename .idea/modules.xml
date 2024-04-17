@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/easyJava.iml" filepath="$PROJECT_DIR$/.idea/easyJava.iml" />
+      <module fileurl="file://$PROJECT_DIR$/easyJava-demo/easyJava-demo.iml" filepath="$PROJECT_DIR$/easyJava-demo/easyJava-demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/easyjava.iml" filepath="$PROJECT_DIR$/easyjava.iml" />
+      <module fileurl="file://$PROJECT_DIR$/javatest.iml" filepath="$PROJECT_DIR$/javatest.iml" />
+    </modules>
+  </component>
+</project>
