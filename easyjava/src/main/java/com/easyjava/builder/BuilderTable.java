@@ -147,7 +147,7 @@ public class BuilderTable {
             tableInfo.setHaveBigDecimal(haveBigDecimal);
             tableInfo.setFieldInfoList(fileInfoList);
         } catch (Exception e) {
-            logger.error("读取表失败");
+            logger.error("读取表字段失败");
         } finally {
             if (fieldResult != null) {
                 try {

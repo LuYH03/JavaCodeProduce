@@ -1,10 +1,7 @@
 package com.easyjava;
 
 import com.easyjava.bean.TableInfo;
-import com.easyjava.builder.BuilderBase;
-import com.easyjava.builder.BuilderPo;
-import com.easyjava.builder.BuilderQuery;
-import com.easyjava.builder.BuilderTable;
+import com.easyjava.builder.*;
 
 import java.util.List;
 
@@ -19,6 +16,8 @@ public class RunApplication {
             BuilderPo.execute(tableInfo);
 
             BuilderQuery.execute(tableInfo);
+
+            BuilderMapper.execute(tableInfo);
         }
 
     }

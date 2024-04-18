@@ -25,6 +25,11 @@ public class BuilderBase {
         headerInfoList.clear();
         headerInfoList.add("package " + Constans.PACKAGE_UTILS);
         build(headerInfoList, "DateUtil", Constans.PATH_UTILS);
+
+        headerInfoList.clear();
+        headerInfoList.add("package " + Constans.PACKAGE_MAPPER);
+        build(headerInfoList, "BaseMapper", Constans.PATH_MAPPER);
+
     }
 
     private static void build(List<String> headerInfoList, String fileName, String outPutPath) {
