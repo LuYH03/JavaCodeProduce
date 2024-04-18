@@ -3,7 +3,6 @@
   <component name="MavenProjectsManager">
     <option name="originalFiles">
       <list>
-        <option value="$PROJECT_DIR$/easyJava-demo/pom.xml" />
         <option value="$PROJECT_DIR$/easyjava/pom.xml" />
         <option value="$PROJECT_DIR$/../javatest/easyjava/pom.xml" />
         <option value="$PROJECT_DIR$/../javatest/pom.xml" />

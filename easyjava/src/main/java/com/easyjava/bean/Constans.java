@@ -5,7 +5,10 @@ import com.easyjava.utils.PropertiesUtils;
 
 public class Constans {
     public static Boolean IGNORE_TABLE_PREFIX;
-    public static String SUFFIX_BEAN_PARAM;
+    public static String SUFFIX_BEAN_QUERY;
+    public static String SUFFIX_BEAN_QUERY_FUZZY;
+    public static String SUFFIX_BEAN_QUERY_TIME_START;
+    public static String SUFFIX_BEAN_QUERY_TIME_END;
     // 开启lombok
     public static String STR_TRUE = "true";
     public static String IGNORE_BEAN_LOMBOK;
@@ -23,6 +26,8 @@ public class Constans {
 
     public static String PATH_JAVA = "java";
     public static String PATH_RESOURCES = "resources";
+    public static String PACKAGE_QUERY;
+    public static String PATH_QUERY;
     public static String PACKAGE_UTILS;
     public static String PACKAGE_ENUM;
     public static String PACKAGE_BASE;
@@ -50,10 +55,14 @@ public class Constans {
 
 
         IGNORE_TABLE_PREFIX = Boolean.valueOf(PropertiesUtils.getString("ignore.table.prefix"));
-        SUFFIX_BEAN_PARAM = PropertiesUtils.getString("suffix.bean.param");
+        SUFFIX_BEAN_QUERY = PropertiesUtils.getString("suffix.bean.query");
+        SUFFIX_BEAN_QUERY_FUZZY = PropertiesUtils.getString("suffix.bean.query.fuzzy");
+        SUFFIX_BEAN_QUERY_TIME_START = PropertiesUtils.getString("suffix.bean.query.time.start");
+        SUFFIX_BEAN_QUERY_TIME_END = PropertiesUtils.getString("suffix.bean.query.time.end");
 
         PACKAGE_BASE = PropertiesUtils.getString("package.base");
         PACKAGE_PO = PACKAGE_BASE + "." + PropertiesUtils.getString("package.po");
+        PACKAGE_QUERY = PACKAGE_BASE + "." + PropertiesUtils.getString("package.query");
         PACKAGE_UTILS = PACKAGE_BASE + "." + PropertiesUtils.getString("package.utils");
         PACKAGE_ENUM = PACKAGE_BASE + "." + PropertiesUtils.getString("package.enum");
 
@@ -61,6 +70,7 @@ public class Constans {
         PATH_BASE = PATH_BASE + PATH_JAVA;
 
         PATH_PO = PATH_BASE + "/" + PACKAGE_PO.replace(".","/");
+        PATH_QUERY = PATH_BASE + "/" + PACKAGE_QUERY.replace(".","/");
         PATH_UTILS = PATH_BASE + "/" + PACKAGE_UTILS.replace(".","/");
         PATH_ENUM = PATH_BASE + "/" + PACKAGE_ENUM.replace(".","/");
     }

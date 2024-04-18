@@ -57,7 +57,7 @@ public class BuilderTable {
                 tableInfo.setTableName(tableName);
                 tableInfo.setBeanName(beanName);
                 tableInfo.setComment(comment);
-                tableInfo.setBeanParamName(beanName + Constans.SUFFIX_BEAN_PARAM);
+                tableInfo.setBeanParamName(beanName + Constans.SUFFIX_BEAN_QUERY);
 
                 /*logger.info("表:{},备注:{},javabean:{},javaParamBean:{}",tableInfo.getTableName(),tableInfo.getComment(),
                         tableInfo.getBeanName(),tableInfo.getBeanParamName());*/
