@@ -18,6 +18,8 @@ public class RunApplication {
             BuilderQuery.execute(tableInfo);
 
             BuilderMapper.execute(tableInfo);
+
+            BuilderMapperXml.execute(tableInfo);
         }
 
     }

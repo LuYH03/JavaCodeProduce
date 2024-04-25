@@ -101,6 +101,7 @@ public class BuilderTable {
         ResultSet fieldResult = null;
 
         ArrayList<FieldInfo> fileInfoList = new ArrayList();
+        ArrayList<FieldInfo> filedExtendList = new ArrayList();
         try {
             ps = conn.prepareStatement(String.format(SQL_SHOW_TABLE_FIELDS, tableInfo.getTableName()));
             fieldResult = ps.executeQuery();
@@ -140,12 +141,40 @@ public class BuilderTable {
                 if ((ArrayUtils.contains(Constans.SQL_DECIMAL_TYPES, type))) {
                     haveBigDecimal = true;
                 }
+
+                if (ArrayUtils.contains(Constans.SQL_STARING_TYPES, type)){
+
+                    FieldInfo fuzzyField = new FieldInfo();
+                    fuzzyField.setJavaType(fieldInfo.getJavaType());
+                    fuzzyField.setPropertyName(propertyName + Constans.SUFFIX_BEAN_QUERY_FUZZY);
+                    fuzzyField.setFieldName(fieldInfo.getFieldName());
+                    fuzzyField.setSqlType(type);
+                    filedExtendList.add(fuzzyField);
+                }
+
+                if (ArrayUtils.contains(Constans.SQL_DATE_TIME_TYPES, type) || ArrayUtils.contains(Constans.SQL_DATE_TYPES, type)){
+
+                    FieldInfo timeStartField = new FieldInfo();
+                    timeStartField.setJavaType("String");
+                    timeStartField.setPropertyName(propertyName + Constans.SUFFIX_BEAN_QUERY_TIME_START);
+                    timeStartField.setFieldName(fieldInfo.getFieldName());
+                    timeStartField.setSqlType(type);
+                    filedExtendList.add(timeStartField);
+
+                    FieldInfo timeEndField = new FieldInfo();
+                    timeEndField.setJavaType("String");
+                    timeEndField.setPropertyName(propertyName + Constans.SUFFIX_BEAN_QUERY_TIME_END);
+                    timeEndField.setFieldName(fieldInfo.getFieldName());
+                    timeEndField.setSqlType(type);
+                    filedExtendList.add(timeEndField);
+                }
             }
 
             tableInfo.setHaveDateTime(haveDateTime);
             tableInfo.setHaveDate(haveDate);
             tableInfo.setHaveBigDecimal(haveBigDecimal);
             tableInfo.setFieldInfoList(fileInfoList);
+            tableInfo.setFieldExtendList(filedExtendList);
         } catch (Exception e) {
             logger.error("读取表字段失败");
         } finally {

@@ -22,14 +22,31 @@ public class BuilderBase {
         headerInfoList.add("package " + Constans.PACKAGE_ENUM);
         build(headerInfoList,"DateTimePatternEnum", Constans.PATH_ENUM);
 
+        //生成date枚举
         headerInfoList.clear();
         headerInfoList.add("package " + Constans.PACKAGE_UTILS);
         build(headerInfoList, "DateUtil", Constans.PATH_UTILS);
 
+        //生成baseMapper
         headerInfoList.clear();
         headerInfoList.add("package " + Constans.PACKAGE_MAPPER);
         build(headerInfoList, "BaseMapper", Constans.PATH_MAPPER);
 
+        //生成pageSize枚举
+        headerInfoList.clear();
+        headerInfoList.add("package " + Constans.PACKAGE_ENUM);
+        build(headerInfoList, "PageSize", Constans.PATH_ENUM);
+
+        //生成simplePage枚举
+        headerInfoList.clear();
+        headerInfoList.add("package " + Constans.PACKAGE_QUERY);
+        headerInfoList.add("import " + Constans.PACKAGE_ENUM + ".PageSize");
+        build(headerInfoList, "SimplePage", Constans.PATH_QUERY);
+
+        //生成BaseQuery枚举
+        headerInfoList.clear();
+        headerInfoList.add("package " + Constans.PACKAGE_QUERY);
+        build(headerInfoList, "BaseQuery", Constans.PATH_QUERY);
     }
 
     private static void build(List<String> headerInfoList, String fileName, String outPutPath) {

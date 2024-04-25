@@ -23,6 +23,7 @@ public class BuilderMapper {
 
     public static void execute(TableInfo tableInfo) {
         File folder = new File(Constans.PATH_MAPPER);
+
         if (!folder.exists()) {
             folder.mkdir();
         }
@@ -62,7 +63,6 @@ public class BuilderMapper {
 
                 StringBuilder methodParams = new StringBuilder();
                 for (FieldInfo fieldInfo : keyFieldInfoList) {
-
                     index++;
                     methodName.append(StringUtils.UperCaseFirstLetter(fieldInfo.getPropertyName()));
                     if (index < keyFieldInfoList.size()) {

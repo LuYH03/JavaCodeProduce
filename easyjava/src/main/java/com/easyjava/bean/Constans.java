@@ -42,7 +42,7 @@ public class Constans {
     public static String PATH_UTILS;
     public static String PATH_ENUM;
     public static String PATH_MAPPER;
-
+    public static String PATH_MAPPER_XMLS;
 
 
     static {
@@ -76,18 +76,20 @@ public class Constans {
         PATH_BASE = PropertiesUtils.getString("path.base");
         PATH_BASE = PATH_BASE + PATH_JAVA;
 
-        PATH_PO = PATH_BASE + "/" + PACKAGE_PO.replace(".","/");
-        PATH_QUERY = PATH_BASE + "/" + PACKAGE_QUERY.replace(".","/");
-        PATH_UTILS = PATH_BASE + "/" + PACKAGE_UTILS.replace(".","/");
-        PATH_ENUM = PATH_BASE + "/" + PACKAGE_ENUM.replace(".","/");
-        PATH_MAPPER = PATH_BASE + "/" + PACKAGE_MAPPER.replace(".","/");
+        PATH_PO = PATH_BASE + "/" + PACKAGE_PO.replace(".", "/");
+        PATH_QUERY = PATH_BASE + "/" + PACKAGE_QUERY.replace(".", "/");
+        PATH_UTILS = PATH_BASE + "/" + PACKAGE_UTILS.replace(".", "/");
+        PATH_ENUM = PATH_BASE + "/" + PACKAGE_ENUM.replace(".", "/");
+        PATH_MAPPER = PATH_BASE + "/" + PACKAGE_MAPPER.replace(".", "/");
+
+        PATH_MAPPER_XMLS = PropertiesUtils.getString("path.base") + PATH_RESOURCES + "/" + PACKAGE_MAPPER.replace(".", "/");
     }
 
-    public static final String[] SQL_DATE_TIME_TYPES = new String[]{"datetime","timestamp"};
+    public static final String[] SQL_DATE_TIME_TYPES = new String[]{"datetime", "timestamp"};
     public static final String[] SQL_DATE_TYPES = new String[]{"date"};
-    public static final String[] SQL_DECIMAL_TYPES = new String[]{"decimal","double","float"};
-    public static final String[] SQL_STARING_TYPES = new String[]{"char","varchar","text","mediumtext","longtext"};
-    public static final String[] SQL_INTEGER_TYPES = new String[]{"int","tinyint"};
+    public static final String[] SQL_DECIMAL_TYPES = new String[]{"decimal", "double", "float"};
+    public static final String[] SQL_STARING_TYPES = new String[]{"char", "varchar", "text", "mediumtext", "longtext"};
+    public static final String[] SQL_INTEGER_TYPES = new String[]{"int", "tinyint"};
     public static final String[] SQL_LONG_TYPES = new String[]{"bigint"};
 
 

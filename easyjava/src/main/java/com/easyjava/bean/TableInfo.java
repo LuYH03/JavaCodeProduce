@@ -31,6 +31,11 @@ public class TableInfo {
     private List<FieldInfo> fieldInfoList;
 
     /**
+     * 扩展字段信息
+     */
+    private List<FieldInfo> fieldExtendList;
+
+    /**
      * 唯一索引集合
      */
     private Map<String, List<FieldInfo>> keyIndexMap = new LinkedHashMap();
@@ -55,12 +60,14 @@ public class TableInfo {
     public TableInfo() {
     }
 
-    public TableInfo(String tableName, String beanName, String beanParamName, String comment, List<FieldInfo> fieldInfoList, Map<String, List<FieldInfo>> keyIndexMap, Boolean haveDate, Boolean haveDateTime, Boolean haveBigDecimal) {
+    public TableInfo(String tableName, String beanName, String beanParamName, String comment, List<FieldInfo> fieldInfoList,List<FieldInfo> fieldExtendList ,
+                     Map<String, List<FieldInfo>> keyIndexMap, Boolean haveDate, Boolean haveDateTime, Boolean haveBigDecimal) {
         this.tableName = tableName;
         this.beanName = beanName;
         this.beanParamName = beanParamName;
         this.comment = comment;
         this.fieldInfoList = fieldInfoList;
+        this.fieldExtendList = fieldExtendList;
         this.keyIndexMap = keyIndexMap;
         this.haveDate = haveDate;
         this.haveDateTime = haveDateTime;
@@ -145,6 +152,14 @@ public class TableInfo {
      */
     public void setFieldInfoList(List<FieldInfo> fieldInfoList) {
         this.fieldInfoList = fieldInfoList;
+    }
+
+    public List<FieldInfo> getFieldExtendList() {
+        return fieldExtendList;
+    }
+
+    public void setFieldExtendList(List<FieldInfo> fieldExtendList) {
+        this.fieldExtendList = fieldExtendList;
     }
 
     /**
