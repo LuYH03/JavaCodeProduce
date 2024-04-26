@@ -15,11 +15,16 @@ public class BuilderPo {
     public static final Logger logger = LoggerFactory.getLogger(BuilderPo.class);
     public static void execute(TableInfo tableInfo){
         File folder = new File(Constans.PATH_PO);
-        if (!folder.exists()){
-            folder.mkdir();
-        }
-
         File poFile = new File(folder,tableInfo.getBeanName() + ".java");
+
+        try {
+            if (!folder.exists()) {
+                folder.mkdirs();
+            }
+            poFile.createNewFile();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
 
         OutputStream out = null;
         OutputStreamWriter outw = null;

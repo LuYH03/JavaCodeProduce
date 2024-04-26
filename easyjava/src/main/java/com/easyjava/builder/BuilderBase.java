@@ -47,15 +47,60 @@ public class BuilderBase {
         headerInfoList.clear();
         headerInfoList.add("package " + Constans.PACKAGE_QUERY);
         build(headerInfoList, "BaseQuery", Constans.PATH_QUERY);
+
+        //生成PaginationResultVo枚举
+        headerInfoList.clear();
+        headerInfoList.add("package " + Constans.PACKAGE_VO);
+        headerInfoList.add("import java.util.ArrayList;");
+        headerInfoList.add("import java.util.List;");
+        build(headerInfoList, "PaginationResultVo", Constans.PATH_VO);
+
+        //生成exception枚举
+        headerInfoList.clear();
+        headerInfoList.add("package " + Constans.PACKAGE_EXCEPTION);
+        headerInfoList.add("import " + Constans.PACKAGE_ENUM + ".ResponseCodeEnum;");
+        build(headerInfoList, "BusinessException", Constans.PATH_EXCEPTION);
+
+        //生成ResponseCode枚举
+        headerInfoList.clear();
+        headerInfoList.add("package " + Constans.PACKAGE_ENUM);
+        build(headerInfoList, "ResponseCodeEnum", Constans.PATH_ENUM);
+
+        // 生成ResponseVo枚举
+        headerInfoList.clear();
+        headerInfoList.add("package " + Constans.PACKAGE_VO);
+        headerInfoList.add("import " + Constans.PACKAGE_ENUM + ".ResponseCodeEnum;");
+        build(headerInfoList, "ResponseVo", Constans.PATH_VO);
+
+        // 生成ABaseController枚举
+        headerInfoList.clear();
+        headerInfoList.add("package " + Constans.PACKAGE_CONTROLLER);
+        headerInfoList.add("import " + Constans.PACKAGE_ENUM + ".ResponseCodeEnum;");
+        headerInfoList.add("import " + Constans.PACKAGE_VO + ".ResponseVo;");
+        build(headerInfoList, "ABaseController", Constans.PATH_CONTROLLER);
+
+        // 生成AGlobalExceptionHandlerController枚举
+        headerInfoList.clear();
+        headerInfoList.add("package " + Constans.PACKAGE_CONTROLLER);
+        headerInfoList.add("import " + Constans.PACKAGE_EXCEPTION + ".BusinessException;");
+        headerInfoList.add("import " + Constans.PACKAGE_VO + ".ResponseVo;");
+        headerInfoList.add("import " + Constans.PACKAGE_ENUM + ".ResponseCodeEnum;");
+        build(headerInfoList, "AGlobalExceptionHandlerController", Constans.PATH_CONTROLLER);
+
     }
 
     private static void build(List<String> headerInfoList, String fileName, String outPutPath) {
         File folder = new File(outPutPath);
-        if (!folder.exists()) {
-            folder.mkdir();
-        }
-
         File javaFile = new File(outPutPath, fileName + ".java");
+
+        try {
+            if (!folder.exists()) {
+                folder.mkdirs();
+            }
+            javaFile.createNewFile();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
 
         OutputStream out = null;
         OutputStreamWriter outw = null;

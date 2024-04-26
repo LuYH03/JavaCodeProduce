@@ -31,13 +31,18 @@ public class BuilderMapperXml {
 
 
         File folder = new File(Constans.PATH_MAPPER_XMLS);
-        if (!folder.exists()) {
-            folder.mkdir();
-        }
-
         String className = tableInfo.getBeanName() + Constans.SUFFIX_MAPPER;
 
         File poFile = new File(folder, className + ".xml");
+
+        try {
+            if (!folder.exists()) {
+                folder.mkdirs();
+            }
+            poFile.createNewFile();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
 
         OutputStream out = null;
         OutputStreamWriter outw = null;
