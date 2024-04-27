@@ -65,7 +65,7 @@ public class BuilderController {
             bw.newLine();
             bw.write("import javax.annotation.Resource;");
             bw.newLine();
-            bw.write("import com.easyjava.entity.vo.ResponseVo;");
+            bw.write("import " + Constans.PACKAGE_VO + ".ResponseVo;");
             bw.newLine();
 
             bw.write("import org.springframework.web.bind.annotation.RequestBody;");
