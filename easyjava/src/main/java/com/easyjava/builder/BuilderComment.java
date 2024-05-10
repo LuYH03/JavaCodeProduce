@@ -1,6 +1,7 @@
 package com.easyjava.builder;
 
 import com.easyjava.utils.DateUtils;
+import jdk.jfr.Description;
 
 import java.io.BufferedWriter;
 import java.io.IOException;
@@ -12,6 +13,7 @@ import java.util.Date;
  * @Description:
  **/
 public class BuilderComment {
+
     public static void createClassCommnet(BufferedWriter bw, String classComment) throws IOException {
         bw.write("/**");
         bw.newLine();
@@ -22,6 +24,7 @@ public class BuilderComment {
         bw.write(" */");
         bw.newLine();
     }
+
     public static void createFiledComment(BufferedWriter bw, String fieldComment) throws IOException {
         bw.write("\t/**");
         bw.newLine();
@@ -31,6 +34,7 @@ public class BuilderComment {
         bw.write("\t */");
         bw.newLine();
     }
+
     public static void createMethodComment(BufferedWriter bw, String methodComment){
 
     }
