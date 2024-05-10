@@ -76,7 +76,7 @@ public class BuilderServiceImpl {
             bw.newLine();
 
             BuilderComment.createClassCommnet(bw, tableInfo.getTableName() + "Service");
-            bw.write("@Service(\"" + mapperBeanName + "\")");
+            bw.write("@Service");
             bw.newLine();
             bw.write("public class " + className + " implements " + interfaceName + " {");
             bw.newLine();

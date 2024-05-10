@@ -109,7 +109,7 @@ public class BuilderQuery {
             bw.flush();
 
         } catch (Exception e) {
-            logger.error("创建po失败", e);
+            logger.error("创建Query失败", e);
         } finally {
             if (bw != null) {
                 try {

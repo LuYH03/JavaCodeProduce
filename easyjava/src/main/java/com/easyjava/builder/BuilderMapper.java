@@ -48,6 +48,8 @@ public class BuilderMapper {
             bw.write("package " + Constans.PACKAGE_MAPPER + ";");
             bw.newLine();
             bw.newLine();
+            bw.write("import org.apache.ibatis.annotations.Mapper;");
+            bw.newLine();
             bw.write("import org.apache.ibatis.annotations.Param;");
             bw.newLine();
 
@@ -56,6 +58,8 @@ public class BuilderMapper {
             //构建类注释
             BuilderComment.createClassCommnet(bw, tableInfo.getComment() + "Mapper");
 
+            bw.write("@Mapper");
+            bw.newLine();
             bw.write("public interface " + className + "<T, P> extends BaseMapper {");
             bw.newLine();
 
